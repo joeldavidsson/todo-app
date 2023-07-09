@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    font-size: 1rem;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    grid-template-areas: 
+    'header'
+    'main'
+    'footer';
+}
+
+header {
+    grid-area: header;
+    background-color: lightslategray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+header h1 {
+    font-size: 3rem;
+    color: white;
+    letter-spacing: 1rem;
+}
+
+/* Main-content styling */
+
+main {
+    background-color: lightgrey;
+    grid-area: main;
+    height: 100%;
+}
+
+section {
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 'newtodo' 'todos';
+    min-height: 100%;
+}
+
+.mainAreaTop {
+    grid-area: newtodo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.mainArea {
+    grid-area: todos;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+
+#addToDoContainer li {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+}
+
+#addToDoContainer textarea {
+    resize: none;
+    height: 5rem;
+    width: 35%;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+ }
+
+.newTodoButton {
+    height: 2.5rem;
+    min-width: fit-content;
+    align-self: center;
+    border:none;
+    border-radius: 10px;
+    padding: 0.7rem;
+    outline: none;
+    cursor: pointer;
+    background-color:royalblue;
+    color:white;
+    text-transform: uppercase;
+}
+
+.newRandomTodoButton {
+    height: 2.5rem;
+    min-width: fit-content;
+    align-self: center;
+    border:none;
+    border-radius: 10px;
+    padding: 0.7rem;
+    outline: none;
+    cursor: pointer;
+    background-color:royalblue;
+    color:white;
+    text-transform: uppercase;
+}
+
+
+#toDoContainer {   
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+#toDoContainer li {
+    display: flex;
+    flex-direction: column;
+    width: 265px;
+    height: 265px;
+    padding: 1rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+
+#toDoContainer p, label, input {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+
+.heading {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.heading h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+#finished li {
+    background-color: lightgreen;
+}
+
+#finished, 
+#unfinished  {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: space-evenly;
+    background-color:rgba(105, 105, 105, 0.096);
+    border-radius: 1rem;
+}
+
+#unfinished li {
+    background-color: lightcoral;
+}
+
+.delete-btn {
+    border:none;
+    border-radius: 10px;
+    padding: 0.7rem;
+    outline: none;
+    cursor: pointer;
+    background-color:royalblue;
+    color:white;
+    align-self: center;
+    margin-top: auto;
+    text-transform: uppercase;
+}
+
+footer {
+    grid-area: footer;
+    background-color: lightslategrey;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+footer li {
+    list-style: none;
+    margin: 0 2rem;
+    text-transform: uppercase;
+
+}
+
+@media screen and (max-width: 478px) {
+    
+    * {
+        font-size: 1rem;
+    }
+
+    #toDoContainer {      
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    #addToDoContainer li {
+        flex-direction: column;
+    }
+
+    #addToDoContainer textarea {
+        width: 100%;
+     }
+}
