@@ -112,4 +112,6 @@ export function showToDos(toDoList) {
 
     statusContainer.append(done, checkboxLabel);
     list.append(title, description, dateCreated, statusContainer, deleteBtn);
+
+    console.log(toDoList);
 }

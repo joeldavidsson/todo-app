@@ -7,10 +7,16 @@ export function deleteToDo(toDoList, list, data) {
         method: 'DELETE',
     })
         .then(res => res.json())
-        .then(console.log);
-
-    if (index !== -1) {
-        data.splice(index, 1);
-        list.remove();
-    }
+        .then(() => {
+            if (toDoList.isDeleted === true) {
+                list.remove();
+            }
+            if (index !== -1) {
+                data.splice(index, 1);
+                list.remove();
+            }
+        })
 }
+
+
+

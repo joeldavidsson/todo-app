@@ -25,7 +25,8 @@ export function addToDo(newTodoDescription, newTodoTitle) {
 export function addRandomToDo() {
     fetch('https://dummyjson.com/todos/random')
 .then(res => res.json())
-        .then((random) => {
-            showToDos(random);
+        .then((newRandomTodo) => {
+            showToDos(newRandomTodo);
+            data.push(newRandomTodo);
 });
 }
